@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.box = "hashicorp/bionic64"
-    config.vm.network = "forwarded_port", guest: 80, host: 8090
+    config.vm.network "forwarded_port", guest: 80, host: 8090
 
     config.vm.provision "ansible" do |ansible|
         ansible.playbook = "playbook.yml"
